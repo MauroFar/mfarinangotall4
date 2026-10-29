@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mfarinangotall4.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#263238, Dark=#F5F5F5}" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="Margin" Value="0,2,0,8" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#F1F5F9, Dark=#263238}" />
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="Margin" Value="0,2,0,8" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#F1F5F9, Dark=#263238}" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,12,0,0" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="4">
+            <Label Text="Registro de contactos" FontSize="28" FontAttributes="Bold" />
+            <Label Text="Ingrese la información del contacto" TextColor="{StaticResource Primary}" Margin="0,0,0,16" />
+
+            <Label Text="Tipo de identificación" FontAttributes="Bold" />
+            <Picker x:Name="IdentificationTypePicker" Title="Seleccione una opción"
+                    SelectedIndexChanged="OnIdentificationTypeChanged">
+                <Picker.Items>
+                    <x:String>CI</x:String>
+                    <x:String>RUC</x:String>
+                    <x:String>Pasaporte</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Identificación" FontAttributes="Bold" />
+            <Entry x:Name="IdentificationEntry" Placeholder="CI: 10 números / RUC: 13 números" />
+            <Label Text="Nombres" FontAttributes="Bold" />
+            <Entry x:Name="FirstNameEntry" Placeholder="Nombres" />
+            <Label Text="Apellidos" FontAttributes="Bold" />
+            <Entry x:Name="LastNameEntry" Placeholder="Apellidos" />
+            <Label Text="Fecha" FontAttributes="Bold" />
+            <DatePicker x:Name="ContactDatePicker" Format="dd/MM/yyyy" Margin="0,2,0,8" />
+            <Label Text="Correo electrónico" FontAttributes="Bold" />
+            <Entry x:Name="EmailEntry" Placeholder="correo@ejemplo.com" Keyboard="Email" />
+            <Label Text="Salario" FontAttributes="Bold" />
+            <Entry x:Name="SalaryEntry" Placeholder="0.00" Keyboard="Numeric" />
+
+            <Button Text="Guardar y ver resumen" Clicked="OnSaveClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

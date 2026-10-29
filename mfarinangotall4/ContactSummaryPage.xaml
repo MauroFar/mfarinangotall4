@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mfarinangotall4.ContactSummaryPage"
+             Title="Resumen del contacto">
+    <ContentPage.Resources>
+        <Style x:Key="SummaryTitleStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource Primary}" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="SummaryLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#263238, Dark=#F5F5F5}" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+        <Style x:Key="ContributionStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#0F766E" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,14" />
+        </Style>
+        <Style x:Key="ExportButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#0F766E" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="3">
+            <Label Text="Resumen del contacto" Style="{StaticResource SummaryTitleStyle}" />
+            <BoxView HeightRequest="1" Color="{StaticResource Primary}" Margin="0,12" />
+            <Label x:Name="IdentificationTypeLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="IdentificationLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="FirstNameLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="LastNameLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="DateLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="EmailLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="SalaryLabel" Style="{StaticResource SummaryLabelStyle}" />
+            <Label x:Name="ContributionLabel" Style="{StaticResource ContributionStyle}" />
+            <Button Text="Exportar a archivo de texto" Style="{StaticResource ExportButtonStyle}" Clicked="OnExportClicked" />
+            <Button Text="Volver al formulario" Clicked="OnBackClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
